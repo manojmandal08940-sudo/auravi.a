@@ -1,0 +1,363 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURAVIA by DIGISPARK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0f;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #0066ff, #0055dd);
+            padding: 10px 16px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 30px 20px 100px;
+            position: relative;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: white;
+        }
+
+        .brain-icon {
+            font-size: 22px;
+            margin-top: 2px;
+        }
+
+        .by-text {
+            font-size: 11px;
+            color: #888;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .get-started-btn {
+            background: linear-gradient(90deg, #00aaff, #7b5cff);
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .get-started-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 170, 255, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #4da6ff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tagline span {
+            color: #4da6ff;
+        }
+
+        .main-heading {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .main-heading .white {
+            color: #ffffff;
+        }
+
+        .main-heading .blue {
+            color: #3b9bff;
+        }
+
+        .main-heading .purple {
+            color: #a78bfa;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        .description strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05);
+        }
+
+        /* Second Section */
+        .demo-section {
+            text-align: center;
+            padding: 50px 20px 40px;
+            background: #0a0a0f;
+        }
+
+        .demo-heading {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .demo-subtext {
+            font-size: 16px;
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(90deg, #00aaff, #7b5cff);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 170, 255, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: #999;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .contact-info strong {
+            color: #ccc;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px 40px;
+            border-top: 1px solid #1a1a25;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .footer .copyright {
+            margin-bottom: 8px;
+        }
+
+        .footer .company {
+            color: #888;
+            margin-bottom: 6px;
+        }
+
+        .footer .products {
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* Gradient Line */
+        .gradient-line {
+            height: 4px;
+            background: linear-gradient(90deg, #00aaff, #7b5cff, #a78bfa);
+            width: 100%;
+            margin-top: 40px;
+            border-radius: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 400px) {
+            .main-heading {
+                font-size: 30px;
+            }
+            .demo-heading {
+                font-size: 28px;
+            }
+            .get-started-btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Blue Bar -->
+    <div class="top-bar">
+        DIGISPARK | UDYAM-OD-12-0045138 |<br>
+        Jagatsinghpur, Odisha | FINAL PRODUCT - AURAVIA
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo">AURAVIA</div>
+                <div class="brain-icon">🧠</div>
+                <div class="by-text">BY DIGISPARK</div>
+            </div>
+            <button class="get-started-btn">
+                Get Started →
+            </button>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="hero">
+            <div class="tagline">
+                ✦ <span>ONE BRAIN. INFINITE POSSIBILITIES.</span> ✦
+            </div>
+
+            <h1 class="main-heading">
+                <span class="white">Your Business</span><br>
+                <span class="white">Will Now</span><br>
+                <span class="blue">Run On Auto</span><br>
+                <span class="purple">Pilot!</span>
+            </h1>
+
+            <p class="description">
+                <strong>AURAVIA</strong> by DIGISPARK combines AI + Cyber Security + Revenue Automation into one intelligent ecosystem. No Manual Work.
+            </p>
+        </div>
+
+        <div class="gradient-line"></div>
+    </div>
+
+    <!-- Free Demo Section -->
+    <div class="demo-section">
+        <h2 class="demo-heading">Free Demo<br>Chahiye?</h2>
+        <p class="demo-subtext">
+            WhatsApp Karo - 5 Minute Me Demo Mil Jayega!
+        </p>
+
+        <button class="whatsapp-btn" onclick="window.open('https://wa.me/919337043811', '_blank')">
+            WhatsApp Pe Baat Karo →
+        </button>
+
+        <div class="contact-info">
+            <strong>Manoj Mandal</strong> | DIGISPARK |<br>
+            Raghunathpur, Jagatsinghpur, Odisha - 754132<br>
+            Udyam No: <strong>UDYAM-OD-12-0045138</strong>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="copyright">
+            © 2026 DIGISPARK | AURAVIA - One Brain. Infinite Possibilities.
+        </div>
+        <div class="company">
+            Company: DIGISPARK | Product: AURAVIA |
+        </div>
+        <div class="products">
+            NEUROAUTO + NEXUS + VAJRA PRO - All Inside AURAVIA<br>
+            No New Project - Only One Brain
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919337043811" class="whatsapp-float" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsApp
+    </a>
+
+</body>
+</html>
+```
+
